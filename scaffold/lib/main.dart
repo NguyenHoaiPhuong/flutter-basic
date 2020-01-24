@@ -1,5 +1,33 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(
+    MaterialApp(
+      title: "My Flutter App",
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("My Scaffold Header"),
+        ),
+        body: Material(
+          color: Colors.lightBlueAccent,
+          child: Center(
+            child: Text(
+              "My Scaffold Body",
+              textDirection: TextDirection.ltr,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 40.0,
+              ),
+            ),
+          ),
+        ),
+      ),
+      debugShowCheckedModeBanner: false,
+    )
+  );
+}
+
+/*
 void main() => runApp(MyScaffoldWidget());
 
 class MyScaffoldWidget extends StatefulWidget {
@@ -39,3 +67,4 @@ class _MyScaffoldWidgetState extends State<MyScaffoldWidget> {
     );
   }
 }
+*/
