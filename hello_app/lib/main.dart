@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(
+    Center(
+      child: Text(
+        "Hello Flutter",
+        textDirection: TextDirection.ltr,
+      ),
+    ),
+  );
+}
+
+/*void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -14,7 +25,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Home page'),
     );
   }
-}
+}*/
 
 // 1st example: basic widget Text
 /*class MyHomePage extends StatelessWidget {
@@ -115,7 +126,7 @@ class MyApp extends StatelessWidget {
 }*/
 
 // 5th example: basic widget Icon
-class MyHomePage extends StatelessWidget {
+/*class MyHomePage extends StatelessWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
 
@@ -126,4 +137,4 @@ class MyHomePage extends StatelessWidget {
       body: Center( child: Icon(Icons.email)),
     );
   }
-}
+}*/
