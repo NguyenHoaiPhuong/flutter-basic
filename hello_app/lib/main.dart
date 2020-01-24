@@ -1,12 +1,34 @@
 import 'package:flutter/material.dart';
 
-void main() {
+/*void main() {
   runApp(
     Center(
       child: Text(
         "Hello Flutter",
         textDirection: TextDirection.ltr,
       ),
+    ),
+  );
+}*/
+
+void main() {
+  runApp(
+    MaterialApp(
+      title: "My Flutter app",
+      home: Material(
+        color: Colors.lightBlueAccent,
+        child: Center(
+          child: Text(
+            "Hello Flutter",
+            textDirection: TextDirection.ltr,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 40.0,
+            ),
+          ),
+        ),
+      ),
+      debugShowCheckedModeBanner: false,
     ),
   );
 }
