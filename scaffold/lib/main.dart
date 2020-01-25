@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'app_screens/homepage.dart';
 
+// First example of Scaffold
+/*
 void main() {
   runApp(
     MaterialApp(
@@ -26,6 +29,54 @@ void main() {
     )
   );
 }
+*/
+
+// First example of Scaffold - Organize code
+/*
+void main() {
+  runApp(MyFlutterApp());
+}
+class MyFlutterApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "My Flutter App",
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("My Scaffold Header"),
+        ),
+        body: Material(
+          color: Colors.lightBlueAccent,
+          child: Center(
+            child: Text(
+              "My Scaffold Body",
+              textDirection: TextDirection.ltr,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 40.0,
+              ),
+            ),
+          ),
+        ),
+      ),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+*/
+
+void main() => runApp(MyFlutterApp());
+
+class MyFlutterApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: "My Flutter App",
+        home: MyHomepage(),
+    );
+  }
+}
+
 
 /*
 void main() => runApp(MyScaffoldWidget());
