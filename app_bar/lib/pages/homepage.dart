@@ -16,7 +16,7 @@ class MyHomePage extends StatelessWidget {
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.add_alert),
-              tooltip: 'Show SnackBar',
+              tooltip: 'Show AlertDialog',
               onPressed: () {
 //              scaffoldKey.currentState.showSnackBar(snackBar);
                 showDialog(
@@ -40,7 +40,7 @@ class MyHomePage extends StatelessWidget {
             ),
             IconButton(
               icon: const Icon(Icons.close),
-              tooltip: 'close',
+              tooltip: 'Close',
               onPressed: () {
                 Navigator.pop(context);
               },
