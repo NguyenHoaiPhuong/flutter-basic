@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+
+import 'package:stream_demo/homepage/counter_stream.dart';
 
 class Homepage extends StatelessWidget {
   final String title;
@@ -23,19 +26,26 @@ class HomepageTop extends AppBar {
 class HomepageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            'You have pushed the button this many times:',
+    // StreamBuilder will automatically update the UI whenever date comes out of the stream
+    return StreamBuilder(
+      stream: CounterStream().counterController.stream,
+      initialData: 0,
+      builder: (context, snapshot) {
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'You have pushed the button this many times:',
+              ),
+              Text(
+                '${CounterStream().counter}',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            ],
           ),
-          // Text(
-          //   '$_counter',
-          //   style: Theme.of(context).textTheme.headline4,
-          // ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
@@ -49,6 +59,7 @@ class HomepageBottom extends StatelessWidget {
         FloatingActionButton(
           onPressed: () {
             print('Increment');
+            CounterStream().counterEventController.add(CounterEvent.Increment);
           },
           tooltip: 'Increment',
           child: Icon(Icons.add),
@@ -57,6 +68,7 @@ class HomepageBottom extends StatelessWidget {
         FloatingActionButton(
           onPressed: () {
             print('Decrement');
+            CounterStream().counterEventController.add(CounterEvent.Decrement);
           },
           tooltip: 'Decrement',
           child: Icon(Icons.remove),
