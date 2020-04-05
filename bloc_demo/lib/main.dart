@@ -42,7 +42,7 @@ class MyHomePage extends StatelessWidget {
                   'You have pushed the button this many times:',
                 ),
                 Text(
-                  '${_bloc.state}',
+                  '$state',
                   style: Theme.of(context).textTheme.headline4,
                 ),
               ],
