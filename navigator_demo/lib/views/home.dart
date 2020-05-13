@@ -6,9 +6,14 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(child: Text('Home')),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        Navigator.pushNamed(context, feedRoute, arguments: 'Data from home');
-      },),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Navigator.pushNamed(context, feedRoute, arguments: 'Data from home');
+        },
+        child: Icon(
+          Icons.add
+        ),
+      ),
     );
   }
 }

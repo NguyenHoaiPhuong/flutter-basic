@@ -10,6 +10,14 @@ class Feed extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(child: Text('Feed: $data')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Navigator.pop(context);
+        },
+        child: Icon(
+          Icons.remove
+        ),
+      ),
     );
   }
 }
